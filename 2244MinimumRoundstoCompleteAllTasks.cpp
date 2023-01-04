@@ -1,0 +1,1 @@
+class Solution { public: int minimumRounds(vector<int>& tasks) { int count = 0; unordered_map<int,int> mp; for(int i=0; i<tasks.size(); i++) mp[tasks[i]]++; for(auto x : mp){ if(x.second < 2) return -1; else{ while(x.second > 1){ if(x.second%3 == 1) x.second -= 2; else x.second -= 3; count++; } } } return count; } };
